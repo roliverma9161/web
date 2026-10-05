@@ -7,7 +7,6 @@ body {
     align-items: center;
     height: 100vh;
 }
-
 .container {
     width: 350px;
     padding: 30px;
@@ -15,7 +14,6 @@ body {
     background: #222;
     border-radius: 15px;
 }
-
 input {
     width: 90%;
     padding: 12px;
@@ -23,7 +21,6 @@ input {
     border-radius: 8px;
     border: none;
 }
-
 button {
     padding: 12px 20px;
     border: none;
@@ -31,7 +28,6 @@ button {
     cursor: pointer;
     background: #45e77b;
 }
-
 #result {
     margin-top: 20px;
     font-weight: bold;
