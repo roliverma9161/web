@@ -510,20 +510,13 @@ nav a:hover {
     color: #aaa;
 
     font-size: 15px;
-
     transition: 0.3s;
 }
-
-
 .skill:hover {
     background: #111;
-
     color: #8cff66;
-
     padding-left: 42px;
 }
-
-
 /* =========================
    PROJECTS
 ========================= */
@@ -531,98 +524,56 @@ nav a:hover {
 .projects {
     border-top: 1px solid #222;
 }
-
-
 .project {
     display: grid;
-
     grid-template-columns: 80px 1fr 40px;
-
     align-items: center;
-
     gap: 20px;
-
     padding: 35px 15px;
-
     border-bottom: 1px solid #222;
-
     transition: 0.3s;
 }
-
-
 .project:hover {
     background: #0f0f0f;
-
     padding-left: 25px;
 }
-
-
 .project-number {
     color: #444;
-
     font-family: monospace;
-
     font-size: 12px;
 }
-
-
 .project h3 {
     font-family: "Space Grotesk", sans-serif;
-
     font-size: 25px;
-
     margin-bottom: 8px;
 }
-
-
 .project p {
     color: #666;
-
     max-width: 600px;
-
     line-height: 1.6;
-
     font-size: 14px;
 }
-
-
 .tags {
     display: flex;
-
     gap: 7px;
-
     margin-top: 15px;
 }
-
-
 .tags span {
     border: 1px solid #222;
-
     border-radius: 5px;
-
     padding: 5px 8px;
-
     color: #666;
-
     font-size: 9px;
 }
-
-
 .arrow {
     font-size: 25px;
-
     color: #444;
-
     transition: 0.3s;
 }
-
-
 .project:hover .arrow {
     color: #8cff66;
-
     transform: translate(4px, -4px);
 }
-
 
 /* =========================
    CONTACT
@@ -630,67 +581,39 @@ nav a:hover {
 
 .contact {
     text-align: center;
-
     padding: 150px 7%;
-
     border-top: 1px solid #1c1c1c;
-
     border-bottom: 1px solid #1c1c1c;
 }
-
-
 .contact p {
     color: #666;
-
     font-size: 11px;
-
     letter-spacing: 2px;
 }
-
-
 .contact h2 {
     font-family: "Space Grotesk", sans-serif;
-
     font-size: clamp(42px, 6vw, 80px);
-
     letter-spacing: -3px;
-
     margin: 25px auto 40px;
-
     max-width: 900px;
 }
-
-
 .contact h2 span {
     color: #8cff66;
 }
-
-
 .contact a {
     display: inline-block;
-
     background: #8cff66;
-
     color: black;
-
     padding: 15px 25px;
-
     border-radius: 8px;
-
     font-size: 14px;
-
     font-weight: 600;
-
     transition: 0.3s;
 }
-
-
 .contact a:hover {
     transform: translateY(-4px);
-
     box-shadow: 0 10px 30px rgba(140, 255, 102, 0.15);
 }
-
 
 /* =========================
    FOOTER
@@ -698,127 +621,93 @@ nav a:hover {
 
 footer {
     display: flex;
-
     justify-content: space-between;
-
     padding: 30px 7%;
-
     color: #444;
-
     font-size: 11px;
 }
-
 
 /* =========================
    RESPONSIVE
 ========================= */
 
 @media (max-width: 900px) {
-
     nav {
         display: none;
     }
-
     .hero {
         grid-template-columns: 1fr;
-
         padding-top: 70px;
     }
-
     .hero-card {
         justify-self: start;
     }
-
     .stats {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .stat:nth-child(2) {
         border-right: none;
     }
-
     .stat:nth-child(-n + 2) {
         border-bottom: 1px solid #1d1d1d;
     }
-
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-
 @media (max-width: 600px) {
-
     .navbar {
         padding: 0 5%;
     }
-
     .nav-btn {
         display: none;
     }
-
     .hero {
         padding: 70px 5%;
     }
-
     .hero h1 {
         letter-spacing: -2px;
     }
-
     .hero-text {
         font-size: 14px;
     }
-
     .hero-buttons {
         flex-direction: column;
     }
-
     .primary-btn,
     .secondary-btn {
         text-align: center;
     }
-
     .stats {
         margin: 0 5%;
     }
-
     .stat {
         padding: 25px 15px;
     }
-
     .stat h2 {
         font-size: 28px;
     }
-
     .section {
         padding: 90px 5%;
     }
-
     .skills-grid {
         grid-template-columns: 1fr 1fr;
     }
-
     .skill {
         padding: 25px 15px;
     }
-
     .project {
         grid-template-columns: 40px 1fr 25px;
     }
-
     .project h3 {
         font-size: 20px;
     }
-
     .contact {
         padding: 100px 5%;
     }
-
     footer {
         flex-direction: column;
-
         gap: 10px;
-
         padding: 25px 5%;
     }
 }
