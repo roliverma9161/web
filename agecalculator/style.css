@@ -1,57 +1,44 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #111;
     color: white;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 100vh;
 }
-
 .container {
     width: 350px;
     padding: 30px;
     text-align: center;
-
     background: #222;
     border-radius: 15px;
 }
-
 h1 {
     color: #45e77b;
 }
-
 input {
     width: 100%;
     padding: 12px;
     margin: 15px 0;
-
     border: none;
     border-radius: 8px;
 }
-
 button {
     padding: 12px 25px;
-
     border: none;
     border-radius: 8px;
-
     background: #45e77b;
     cursor: pointer;
     font-weight: bold;
 }
-
 button:hover {
     opacity: 0.8;
 }
-
 #result {
     margin-top: 25px;
 }
