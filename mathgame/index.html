@@ -11,58 +11,78 @@
 
 <body>
 
-    <div class="game">
+    <!-- Game Header -->
+
+    <header class="game-header">
 
         <h1>🧠 Math Bubble</h1>
 
         <div class="score">
-            Score: <span id="score">0</span>
+            Score:
+            <span id="score">0</span>
         </div>
 
-        <div class="question-box">
-            <h2 id="question">Loading...</h2>
-        </div>
+    </header>
 
-        <!-- Answer Bubbles -->
 
-        <div class="bubble-area">
+    <!-- Question -->
 
-            <button
-                class="bubble bubble-1"
-                id="option0"
-                onclick="checkAnswer(0)">
-            </button>
+    <div class="question-box">
 
-            <button
-                class="bubble bubble-2"
-                id="option1"
-                onclick="checkAnswer(1)">
-            </button>
+        <p>Solve the question and choose the correct bubble</p>
 
-            <button
-                class="bubble bubble-3"
-                id="option2"
-                onclick="checkAnswer(2)">
-            </button>
-
-            <button
-                class="bubble bubble-4"
-                id="option3"
-                onclick="checkAnswer(3)">
-            </button>
-
-        </div>
-
-        <p id="message"></p>
-
-        <button
-            class="restart"
-            id="restartBtn"
-            onclick="startGame()">
-            🔄 Play Again
-        </button>
+        <h2 id="question">Loading...</h2>
 
     </div>
+
+
+    <!-- Full Screen Bubble Area -->
+
+    <main class="bubble-area">
+
+        <button
+            class="bubble bubble-1"
+            id="option0"
+            onclick="checkAnswer(0)">
+        </button>
+
+        <button
+            class="bubble bubble-2"
+            id="option1"
+            onclick="checkAnswer(1)">
+        </button>
+
+        <button
+            class="bubble bubble-3"
+            id="option2"
+            onclick="checkAnswer(2)">
+        </button>
+
+        <button
+            class="bubble bubble-4"
+            id="option3"
+            onclick="checkAnswer(3)">
+        </button>
+
+    </main>
+
+
+    <!-- Game Message -->
+
+    <div id="message"></div>
+
+
+    <!-- Restart -->
+
+    <button
+        class="restart"
+        id="restartBtn"
+        onclick="startGame()">
+
+        🔄 Play Again
+
+    </button>
+
 
     <script src="script.js"></script>
 

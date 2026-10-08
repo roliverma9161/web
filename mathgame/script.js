@@ -1,8 +1,11 @@
 let correctAnswer = 0;
+
 let score = 0;
 
 
-// Start Game
+// =========================
+// START GAME
+// =========================
 
 function startGame() {
 
@@ -20,7 +23,9 @@ function startGame() {
 }
 
 
-// Generate Question
+// =========================
+// GENERATE QUESTION
+// =========================
 
 function generateQuestion() {
 
@@ -32,16 +37,20 @@ function generateQuestion() {
 
 
     let operations = [
+
         "+",
         "-",
         "×",
         "÷"
+
     ];
 
 
     let operation =
         operations[
-            Math.floor(Math.random() * operations.length)
+            Math.floor(
+                Math.random() * operations.length
+            )
         ];
 
 
@@ -50,6 +59,7 @@ function generateQuestion() {
     if (operation === "+") {
 
         correctAnswer = num1 + num2;
+
     }
 
 
@@ -58,6 +68,7 @@ function generateQuestion() {
     else if (operation === "-") {
 
         correctAnswer = num1 - num2;
+
     }
 
 
@@ -66,6 +77,7 @@ function generateQuestion() {
     else if (operation === "×") {
 
         correctAnswer = num1 * num2;
+
     }
 
 
@@ -73,20 +85,15 @@ function generateQuestion() {
 
     else {
 
-        /*
-        Division ko simple rakhne ke liye
-        answer ko integer banate hain.
-        */
-
         correctAnswer = num1;
 
         num1 = num1 * num2;
+
     }
 
 
-    // Question Display
-
     document.getElementById("question").innerText =
+
         `${num1} ${operation} ${num2} = ?`;
 
 
@@ -94,7 +101,9 @@ function generateQuestion() {
 }
 
 
-// Generate Four Options
+// =========================
+// GENERATE OPTIONS
+// =========================
 
 function generateOptions() {
 
@@ -111,38 +120,50 @@ function generateOptions() {
     while (options.length < 4) {
 
         let wrongAnswer =
+
             correctAnswer +
+
             Math.floor(Math.random() * 11) - 5;
 
 
-        if (
-            !options.includes(wrongAnswer)
-        ) {
+        if (!options.includes(wrongAnswer)) {
 
             options.push(wrongAnswer);
+
         }
+
     }
 
 
-    // Random order
+    // Random position
 
     options.sort(
         () => Math.random() - 0.5
     );
 
 
-    // Put numbers inside bubbles
+    // Put answer inside bubbles
 
     for (let i = 0; i < 4; i++) {
 
         let bubble =
+
             document.getElementById(
                 `option${i}`
             );
 
 
-        bubble.innerText =
-            options[i];
+        bubble.innerHTML = `
+
+            <span class="answer">
+                ${options[i]}
+            </span>
+
+            <span class="tap">
+                👆
+            </span>
+
+        `;
 
 
         bubble.dataset.answer =
@@ -151,25 +172,29 @@ function generateOptions() {
 }
 
 
-// Check Answer
+// =========================
+// CHECK ANSWER
+// =========================
 
 function checkAnswer(index) {
 
     let selectedAnswer =
+
         Number(
+
             document.getElementById(
                 `option${index}`
             ).dataset.answer
+
         );
 
 
-    // Correct
+    // CORRECT
 
-    if (
-        selectedAnswer === correctAnswer
-    ) {
+    if (selectedAnswer === correctAnswer) {
 
         score++;
+
 
         document.getElementById(
             "score"
@@ -178,8 +203,7 @@ function checkAnswer(index) {
 
         document.getElementById(
             "message"
-        ).innerText =
-            "✅ Correct!";
+        ).innerText = "✅ Correct!";
 
 
         setTimeout(() => {
@@ -190,27 +214,32 @@ function checkAnswer(index) {
                 "message"
             ).innerText = "";
 
-        }, 700);
+        }, 600);
 
     }
 
 
-    // Wrong
+    // WRONG
 
     else {
 
         gameOver();
+
     }
+
 }
 
 
-// Game Over
+// =========================
+// GAME OVER
+// =========================
 
 function gameOver() {
 
     document.getElementById(
         "message"
     ).innerText =
+
         `❌ Game Over! Score: ${score}`;
 
 
@@ -219,12 +248,13 @@ function gameOver() {
 
     document.getElementById(
         "restartBtn"
-    ).style.display =
-        "inline-block";
+    ).style.display = "block";
 }
 
 
-// Disable Bubbles
+// =========================
+// DISABLE BUBBLES
+// =========================
 
 function disableBubbles() {
 
@@ -233,11 +263,15 @@ function disableBubbles() {
         document.getElementById(
             `option${i}`
         ).disabled = true;
+
     }
+
 }
 
 
-// Enable Bubbles
+// =========================
+// ENABLE BUBBLES
+// =========================
 
 function enableBubbles() {
 
@@ -246,10 +280,14 @@ function enableBubbles() {
         document.getElementById(
             `option${i}`
         ).disabled = false;
+
     }
+
 }
 
 
-// Start game automatically
+// =========================
+// START
+// =========================
 
 startGame();
