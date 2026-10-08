@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Math Challenge Game</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1>🧠 Math Challenge</h1>
+
+        <p class="score">
+            Score: <span id="score">0</span>
+        </p>
+
+        <div class="question-box">
+            <h2 id="question">Question</h2>
+        </div>
+
+        <div class="options">
+            <button onclick="checkAnswer(0)" id="option0"></button>
+            <button onclick="checkAnswer(1)" id="option1"></button>
+            <button onclick="checkAnswer(2)" id="option2"></button>
+            <button onclick="checkAnswer(3)" id="option3"></button>
+        </div>
+
+        <p id="message"></p>
+
+        <button id="restartBtn" onclick="startGame()">
+            🔄 Play Again
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
