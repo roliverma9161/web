@@ -1,8 +1,9 @@
-let correctAnswer;
+let correctAnswer = 0;
 let score = 0;
 
 
 // Start Game
+
 function startGame() {
 
     score = 0;
@@ -13,59 +14,78 @@ function startGame() {
 
     document.getElementById("restartBtn").style.display = "none";
 
-    enableOptions();
+    enableBubbles();
 
     generateQuestion();
 }
 
 
 // Generate Question
+
 function generateQuestion() {
 
-    let num1 = Math.floor(Math.random() * 20) + 1;
-    let num2 = Math.floor(Math.random() * 20) + 1;
+    let num1 =
+        Math.floor(Math.random() * 20) + 1;
 
-    let operations = ["+", "-", "*", "/"];
+    let num2 =
+        Math.floor(Math.random() * 20) + 1;
+
+
+    let operations = [
+        "+",
+        "-",
+        "×",
+        "÷"
+    ];
+
 
     let operation =
-        operations[Math.floor(Math.random() * operations.length)];
+        operations[
+            Math.floor(Math.random() * operations.length)
+        ];
 
 
-    // Division ko easy aur integer banane ke liye
-    if (operation === "/") {
+    // Addition
 
-        num1 = num1 * num2;
-
-    }
-
-
-    // Correct Answer
     if (operation === "+") {
 
         correctAnswer = num1 + num2;
-
     }
+
+
+    // Subtraction
 
     else if (operation === "-") {
 
         correctAnswer = num1 - num2;
-
     }
 
-    else if (operation === "*") {
+
+    // Multiplication
+
+    else if (operation === "×") {
 
         correctAnswer = num1 * num2;
-
-    }
-
-    else if (operation === "/") {
-
-        correctAnswer = num1 / num2;
-
     }
 
 
-    // Question show karo
+    // Division
+
+    else {
+
+        /*
+        Division ko simple rakhne ke liye
+        answer ko integer banate hain.
+        */
+
+        correctAnswer = num1;
+
+        num1 = num1 * num2;
+    }
+
+
+    // Question Display
+
     document.getElementById("question").innerText =
         `${num1} ${operation} ${num2} = ?`;
 
@@ -74,16 +94,20 @@ function generateQuestion() {
 }
 
 
-// Generate 4 Options
+// Generate Four Options
+
 function generateOptions() {
 
     let options = [];
 
-    // Correct answer add karo
+
+    // Correct answer
+
     options.push(correctAnswer);
 
 
-    // 3 wrong answers generate karo
+    // Wrong answers
+
     while (options.length < 4) {
 
         let wrongAnswer =
@@ -91,103 +115,141 @@ function generateOptions() {
             Math.floor(Math.random() * 11) - 5;
 
 
-        if (!options.includes(wrongAnswer)) {
+        if (
+            !options.includes(wrongAnswer)
+        ) {
 
             options.push(wrongAnswer);
-
         }
     }
 
 
-    // Options ko random order me arrange karo
-    options.sort(() => Math.random() - 0.5);
+    // Random order
+
+    options.sort(
+        () => Math.random() - 0.5
+    );
 
 
-    // Buttons me options show karo
+    // Put numbers inside bubbles
+
     for (let i = 0; i < 4; i++) {
 
-        document.getElementById(`option${i}`).innerText =
+        let bubble =
+            document.getElementById(
+                `option${i}`
+            );
+
+
+        bubble.innerText =
             options[i];
 
-        document.getElementById(`option${i}`).dataset.answer =
+
+        bubble.dataset.answer =
             options[i];
     }
 }
 
 
 // Check Answer
+
 function checkAnswer(index) {
 
     let selectedAnswer =
         Number(
-            document.getElementById(`option${index}`).dataset.answer
+            document.getElementById(
+                `option${index}`
+            ).dataset.answer
         );
 
 
-    if (selectedAnswer === correctAnswer) {
+    // Correct
 
-        // Right Answer
+    if (
+        selectedAnswer === correctAnswer
+    ) {
+
         score++;
 
-        document.getElementById("score").innerText =
-            score;
+        document.getElementById(
+            "score"
+        ).innerText = score;
 
-        document.getElementById("message").innerText =
-            "✅ Correct! Next Question...";
+
+        document.getElementById(
+            "message"
+        ).innerText =
+            "✅ Correct!";
+
 
         setTimeout(() => {
 
             generateQuestion();
 
-            document.getElementById("message").innerText = "";
+            document.getElementById(
+                "message"
+            ).innerText = "";
 
         }, 700);
 
     }
 
+
+    // Wrong
+
     else {
 
-        // Wrong Answer
         gameOver();
-
     }
 }
 
 
 // Game Over
+
 function gameOver() {
 
-    document.getElementById("message").innerText =
-        `❌ Game Over! Your Score: ${score}`;
+    document.getElementById(
+        "message"
+    ).innerText =
+        `❌ Game Over! Score: ${score}`;
 
-    disableOptions();
 
-    document.getElementById("restartBtn").style.display =
+    disableBubbles();
+
+
+    document.getElementById(
+        "restartBtn"
+    ).style.display =
         "inline-block";
 }
 
 
-// Disable buttons
-function disableOptions() {
+// Disable Bubbles
+
+function disableBubbles() {
 
     for (let i = 0; i < 4; i++) {
 
-        document.getElementById(`option${i}`).disabled =
-            true;
+        document.getElementById(
+            `option${i}`
+        ).disabled = true;
     }
 }
 
 
-// Enable buttons
-function enableOptions() {
+// Enable Bubbles
+
+function enableBubbles() {
 
     for (let i = 0; i < 4; i++) {
 
-        document.getElementById(`option${i}`).disabled =
-            false;
+        document.getElementById(
+            `option${i}`
+        ).disabled = false;
     }
 }
 
 
-// Game start
+// Start game automatically
+
 startGame();
