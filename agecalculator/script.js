@@ -1,5 +1,4 @@
 function calculateAge() {
-
     let dob = document.getElementById("dob").value;
     let result = document.getElementById("result");
     if (dob === "") {
