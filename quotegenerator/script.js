@@ -8,12 +8,8 @@ const quotes = [
     "Your future depends on what you do today.",
     "Don't fear mistakes. Learn from them."
 ];
-
 function generateQuote() {
-
     let randomIndex = Math.floor(Math.random() * quotes.length);
-
     let quoteText = document.getElementById("quoteText");
-
     quoteText.innerText = quotes[randomIndex];
 }
