@@ -1,8 +1,6 @@
 function checkPassword() {
-
     let password = document.getElementById("password").value;
     let result = document.getElementById("result");
-
     if (password.length < 6) {
         result.innerText = "❌ Weak Password";
     } 
