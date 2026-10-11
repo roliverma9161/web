@@ -1,81 +1,48 @@
 let correctAnswer = 0;
-
 let score = 0;
-
-
 // =========================
 // START GAME
 // =========================
 
 function startGame() {
-
     score = 0;
-
     document.getElementById("score").innerText = score;
-
     document.getElementById("message").innerText = "";
-
     document.getElementById("restartBtn").style.display = "none";
-
     enableBubbles();
-
     generateQuestion();
 }
-
-
 // =========================
 // GENERATE QUESTION
 // =========================
 
 function generateQuestion() {
-
     let num1 =
         Math.floor(Math.random() * 20) + 1;
-
     let num2 =
         Math.floor(Math.random() * 20) + 1;
-
-
     let operations = [
-
         "+",
         "-",
         "×",
         "÷"
-
     ];
-
-
     let operation =
         operations[
             Math.floor(
                 Math.random() * operations.length
             )
         ];
-
-
     // Addition
-
     if (operation === "+") {
-
         correctAnswer = num1 + num2;
-
     }
-
-
     // Subtraction
-
     else if (operation === "-") {
-
         correctAnswer = num1 - num2;
-
     }
-
-
     // Multiplication
-
     else if (operation === "×") {
-
         correctAnswer = num1 * num2;
     }
     // Division
