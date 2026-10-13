@@ -1,10 +1,8 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 :root {
     --bg: #090d18;
     --panel: #131b2c;
@@ -12,7 +10,6 @@
     --blue: #56c8ff;
     --muted: #9aa8bd;
 }
-
 body {
     min-height: 100vh;
     background: radial-gradient(circle at top, #182943, var(--bg) 65%);
@@ -20,7 +17,6 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px 5%;
 }
-
 .header {
     display: flex;
     align-items: center;
@@ -28,33 +24,27 @@ body {
     gap: 15px;
     margin-bottom: 25px;
 }
-
 .header h1 {
     font-size: 28px;
 }
-
 .header h1 span {
     color: var(--green);
 }
-
 .best-score {
     padding: 12px 18px;
     border: 1px solid #ffffff18;
     border-radius: 12px;
     background: #ffffff08;
 }
-
 .best-score strong {
     color: #ffd43b;
 }
-
 .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
     margin-bottom: 20px;
 }
-
 .stat {
     background: var(--panel);
     border: 1px solid #ffffff12;
@@ -62,37 +52,31 @@ body {
     padding: 17px;
     text-align: center;
 }
-
 .stat span {
     display: block;
     color: var(--muted);
     font-size: 13px;
     margin-bottom: 8px;
 }
-
 .stat strong {
     color: var(--green);
     font-size: 25px;
 }
-
 main {
     max-width: 1100px;
     margin: auto;
 }
-
 .game-info {
     display: flex;
-    justify-content: space-between;
+   justify-content: space-between;
     gap: 12px;
     color: #dce6f5;
     margin-bottom: 12px;
     font-size: 14px;
 }
-
 .game-info strong {
     color: var(--green);
 }
-
 .timer-track {
     height: 7px;
     background: #ffffff15;
@@ -100,14 +84,12 @@ main {
     overflow: hidden;
     margin-bottom: 15px;
 }
-
 #timerBar {
     width: 100%;
     height: 100%;
     background: var(--green);
     transition: width 0.2s linear, background 0.2s;
 }
-
 .game-area {
     height: min(48vh, 430px);
     min-height: 300px;
@@ -119,7 +101,6 @@ main {
         radial-gradient(circle at 50% 30%, #1d3150, transparent 70%),
         #0d1422;
 }
-
 .game-area::before {
     content: "";
     position: absolute;
@@ -129,7 +110,6 @@ main {
     background-size: 28px 28px;
     opacity: 0.3;
 }
-
 .welcome {
     position: absolute;
     inset: 0;
@@ -142,36 +122,30 @@ main {
     text-align: center;
     background: #0d1422d9;
 }
-
 .ninja-icon {
     font-size: 48px;
     margin-bottom: 12px;
 }
-
 .welcome h2,
 .result-card h2 {
     font-size: 27px;
     margin-bottom: 10px;
 }
-
 .welcome p,
 .result-card > p {
     color: var(--muted);
     line-height: 1.6;
 }
-
 button {
     border: none;
     cursor: pointer;
     font-weight: bold;
     transition: transform 0.2s, filter 0.2s;
 }
-
 button:hover {
     filter: brightness(1.1);
     transform: translateY(-2px);
 }
-
 #startBtn,
 #restartBtn {
     margin-top: 22px;
@@ -181,13 +155,11 @@ button:hover {
     color: #09121a;
     font-size: 16px;
 }
-
 .word-layer {
     position: absolute;
     inset: 0;
     overflow: hidden;
 }
-
 .falling-word {
     position: absolute;
     top: 0;
@@ -202,19 +174,16 @@ button:hover {
     white-space: nowrap;
     user-select: none;
 }
-
 .falling-word.target {
     border-color: var(--green);
     color: var(--green);
     box-shadow: 0 0 20px #45e77b35;
 }
-
 .falling-word.hit {
     opacity: 0;
     transform: scale(1.3);
     transition: 0.15s;
 }
-
 .game-message {
     position: absolute;
     left: 50%;
@@ -226,7 +195,6 @@ button:hover {
     text-align: center;
     pointer-events: none;
 }
-
 .typing-panel {
     margin-top: 20px;
     padding: 22px;
@@ -234,7 +202,6 @@ button:hover {
     border: 1px solid #ffffff12;
     border-radius: 18px;
 }
-
 .typing-panel label {
     display: block;
     margin-bottom: 12px;
@@ -243,12 +210,10 @@ button:hover {
     font-weight: bold;
     letter-spacing: 1.5px;
 }
-
 #typingForm {
     display: flex;
     gap: 10px;
 }
-
 #wordInput {
     flex: 1;
     min-width: 0;
@@ -260,16 +225,13 @@ button:hover {
     color: white;
     font-size: 17px;
 }
-
 #wordInput:focus {
     border-color: var(--green);
     box-shadow: 0 0 0 3px #45e77b15;
 }
-
 #wordInput:disabled {
     opacity: 0.6;
 }
-
 #submitBtn {
     padding: 0 25px;
     border-radius: 11px;
@@ -277,18 +239,15 @@ button:hover {
     color: #09121a;
     font-size: 16px;
 }
-
 #submitBtn:disabled {
     cursor: not-allowed;
     opacity: 0.5;
 }
-
 #hint {
     margin-top: 12px;
     color: var(--muted);
     font-size: 12px;
 }
-
 .overlay {
     position: fixed;
     inset: 0;
@@ -300,7 +259,6 @@ button:hover {
     background: #050914eF;
     backdrop-filter: blur(10px);
 }
-
 .result-card {
     width: min(450px, 100%);
     padding: 30px;
@@ -309,91 +267,73 @@ button:hover {
     background: #131b2c;
     text-align: center;
 }
-
 .result-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     margin-top: 25px;
 }
-
 .result-stats div {
     padding: 13px 5px;
     border-radius: 12px;
     background: #ffffff09;
 }
-
 .result-stats span,
 .result-stats strong {
     display: block;
 }
-
 .result-stats span {
     color: var(--muted);
     font-size: 11px;
 }
-
 .result-stats strong {
     margin-top: 9px;
     color: var(--green);
     font-size: 22px;
 }
-
 @media (max-width: 600px) {
     body {
         padding: 15px;
     }
-
     .header {
         align-items: flex-start;
         flex-direction: column;
     }
-
     .header h1 {
         font-size: 24px;
     }
-
     .stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 9px;
     }
-
     .stat {
         padding: 12px;
     }
-
     .stat strong {
         font-size: 22px;
     }
-
     .game-info {
         flex-wrap: wrap;
         font-size: 12px;
     }
-
     .game-area {
         height: 40vh;
         min-height: 280px;
     }
-
     .falling-word {
         padding: 7px 10px;
         font-size: 14px;
     }
-
     .typing-panel {
         padding: 15px;
     }
-
     #wordInput {
         padding: 12px;
         font-size: 15px;
     }
-
     #submitBtn {
         padding: 0 17px;
     }
-
     .result-card {
         padding: 22px 15px;
     }
