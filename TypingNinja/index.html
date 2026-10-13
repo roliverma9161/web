@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="header">
         <h1>⚡ Typing <span>Ninja</span></h1>
         <div class="best-score">🏆 Best: <strong id="bestScore">0</strong></div>
     </header>
-
     <section class="stats">
         <div class="stat">
             <span>Score</span>
@@ -32,18 +29,15 @@
             <strong id="combo">0</strong>
         </div>
     </section>
-
     <main>
         <div class="game-info">
             <div>❤️ Lives: <strong id="lives">3</strong></div>
             <div>⚔️ Level: <strong id="level">1</strong></div>
             <div>⏱️ Time: <strong id="time">30</strong>s</div>
         </div>
-
         <div class="timer-track">
             <div id="timerBar"></div>
         </div>
-
         <section class="game-area" id="gameArea">
             <div class="welcome" id="welcome">
                 <div class="ninja-icon">🥷</div>
@@ -51,12 +45,9 @@
                 <p>Type the falling words before they escape!</p>
                 <button id="startBtn">🚀 Start Challenge</button>
             </div>
-
             <div class="word-layer" id="wordLayer"></div>
-
             <div class="game-message" id="gameMessage"></div>
         </section>
-
         <section class="typing-panel">
             <label for="wordInput">TYPE THE WORD AND PRESS ENTER</label>
             <form id="typingForm">
@@ -67,30 +58,25 @@
                     autocomplete="off"
                     autocapitalize="off"
                     spellcheck="false"
-                    disabled
-                >
+                    disabled>
                 <button id="submitBtn" type="submit" disabled>Hit!</button>
             </form>
             <p id="hint">Every correct word earns points. Don't let words escape!</p>
         </section>
     </main>
-
     <section class="overlay" id="resultScreen">
         <div class="result-card">
             <div class="ninja-icon">🏁</div>
             <h2 id="resultTitle">Challenge Complete!</h2>
             <p id="resultText">Well played, Ninja!</p>
-
             <div class="result-stats">
                 <div><span>Final Score</span><strong id="finalScore">0</strong></div>
                 <div><span>Typing Speed</span><strong id="finalWpm">0</strong></div>
                 <div><span>Accuracy</span><strong id="finalAccuracy">100%</strong></div>
             </div>
-
             <button id="restartBtn">🔄 Play Again</button>
         </div>
     </section>
-
     <script src="script.js"></script>
 </body>
 </html>
