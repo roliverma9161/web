@@ -7,7 +7,6 @@ body {
     height: 100vh;
     margin: 0;
 }
-
 .game-card {
     background: white;
     padding: 35px;
@@ -16,24 +15,20 @@ body {
     text-align: center;
     width: 320px;
 }
-
 h1 {
     font-size: 22px;
     color: #333;
     margin-bottom: 5px;
 }
-
 p {
     color: #666;
     font-size: 14px;
 }
-
 .input-section {
     margin: 20px 0;
     display: flex;
     gap: 10px;
 }
-
 input {
     flex: 1;
     padding: 10px;
@@ -42,11 +37,9 @@ input {
     border-radius: 8px;
     outline: none;
 }
-
 input:focus {
     border-color: #ff5858;
 }
-
 button {
     padding: 10px 15px;
     font-size: 16px;
@@ -57,23 +50,19 @@ button {
     cursor: pointer;
     font-weight: bold;
 }
-
 button:hover {
     background-color: #e04848;
 }
-
 .message {
     font-size: 16px;
     font-weight: bold;
     margin: 15px 0;
     color: #333;
 }
-
 .attempts {
     font-size: 13px;
     color: #888;
 }
-
 .hidden {
     display: none;
     width: 100%;
